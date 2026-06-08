@@ -18,6 +18,8 @@ public enum AgentType {
     INVENTORY("inventory_agent", "Kiểm kho"),
     COMPLAINTS("complaints_agent", "Khiếu nại"),
     SUPPORT("support_agent", "Hỗ trợ"),
+    CART("cart_agent", "Giỏ hàng"),
+    RECOMMEND("recommend_agent", "Gợi ý sản phẩm"),
     FAQ("faq_agent", "FAQ"),
     MARKETING("marketing_agent", "Marketing"),
     RETURNS("returns_agent", "Đổi trả hoàn tiền"),
