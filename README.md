@@ -267,7 +267,7 @@ Dockerfile build WAR bằng `mvn clean package -DskipTests -B`, chạy runtime b
 
 **Nguyễn Vũ Bảo** — [GitHub @baocodeai](https://github.com/baocodeai)
 
-Repository: [github.com/nvbao117/online_shoe_store](https://github.com/baocodeai/5a-store-ai-commerce)
+Repository: [github.com/baocodeai/5a-store-ai-commerce](https://github.com/baocodeai/5a-store-ai-commerce)
 
 ## 📄 License
 
