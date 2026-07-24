@@ -27,19 +27,17 @@
 
 ---
 
-## 🎯 Tóm tắt cho nhà tuyển dụng
+## 🎯 Tổng quan dự án
 
-**5A Store** là project cá nhân mô phỏng một hệ thống e-commerce sản xuất thực (production-like), được xây dựng để chứng minh năng lực **backend/full-stack Java** qua các bài toán thật:
+**5A Store** là một hệ thống e-commerce bán giày được xây dựng theo hướng production-like — không dừng lại ở CRUD bán hàng, mà giải quyết trọn vẹn các bài toán của một sàn thương mại điện tử thật:
 
-| Bài toán | Cách giải quyết trong project |
+| Bài toán | Cách 5A Store giải quyết |
 | --- | --- |
-| Thiết kế domain e-commerce phức tạp | Sản phẩm có biến thể size/màu/tồn kho, giỏ hàng, checkout nhiều bước, voucher theo phạm vi, đổi trả |
+| Domain e-commerce phức tạp | Sản phẩm có biến thể size/màu/tồn kho, giỏ hàng, checkout nhiều bước, voucher theo phạm vi, đổi trả |
 | Bảo mật hệ thống | JWT stateless qua cookie, refresh token, BCrypt, Google OAuth2, phân quyền theo role |
 | Tích hợp bên thứ ba | Cổng thanh toán VNPay (sandbox), Gmail SMTP, WebSocket/STOMP realtime |
-| Ứng dụng AI vào sản phẩm thật | Chatbot **multi-agent** (LangChain4j) + **RAG** trên ChromaDB để tư vấn sản phẩm/chính sách/đơn hàng |
-| Tư duy vận hành & triển khai | Docker Compose (MySQL + ChromaDB + App), Maven WAR, seed data, cấu hình deploy Railway |
-
-➡️ Nếu bạn muốn đánh giá năng lực xử lý một hệ thống có **nhiều domain kết hợp AI thực chiến** (không phải chatbot demo tách rời), đây là project phù hợp để xem code.
+| Trải nghiệm mua sắm thông minh | Chatbot **multi-agent** (LangChain4j) + **RAG** trên ChromaDB để tư vấn sản phẩm/chính sách/đơn hàng |
+| Vận hành & triển khai | Docker Compose (MySQL + ChromaDB + App), Maven WAR, seed data, cấu hình deploy Railway |
 
 ## 🎬 Demo
 
@@ -260,19 +258,10 @@ Dockerfile build WAR bằng `mvn clean package -DskipTests -B`, chạy runtime b
 ## 🔒 Ghi chú triển khai và bảo mật
 
 - Không đưa API key, OAuth secret, mail app password, JWT secret hoặc VNPay secret lên repository public.
-- Nếu key từng bị commit hoặc chia sẻ, hãy rotate key trước khi public repo hoặc gửi cho nhà tuyển dụng.
+- Nếu key từng bị commit hoặc chia sẻ, hãy rotate key trước khi public repo.
 - `Dockerfile` hiện healthcheck tới `/actuator/health` nhưng `pom.xml` chưa có `spring-boot-starter-actuator` — cần thêm actuator hoặc đổi healthcheck khi lên production.
 - `docker-compose.yml` mount sẵn SQL dump để tự khởi tạo database khi volume MySQL mới được tạo.
 - Có `railway.toml` để deploy theo Dockerfile.
-
-## 💡 Vì sao project này đáng chú ý
-
-Project thể hiện khả năng xây dựng một sản phẩm full-stack có nhiều tích hợp thực tế, thay vì chỉ là demo CRUD:
-
-- **Domain e-commerce đủ sâu**: sản phẩm có variant, tồn kho, đơn hàng, thanh toán, hoàn trả, voucher và review.
-- **AI ứng dụng đúng ngữ cảnh**: agent phân tuyến intent, truy vấn sản phẩm/tồn kho, RAG chính sách và lưu lịch sử hội thoại theo session.
-- **Tư duy vận hành**: Docker Compose, seed database, externalized configuration, logging agent theo session, API monitor riêng cho agent.
-- **Tích hợp production-like**: JWT stateless, OAuth2, email SMTP, VNPay sandbox, WebSocket/STOMP cho realtime.
 
 ## 👤 Tác giả
 
