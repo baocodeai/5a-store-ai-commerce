@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 public enum IntentType {
     // Primary Intents - Mua sắm
     SEARCH("search", "Tìm kiếm sản phẩm"),
+    RECOMMENDATION("recommendation", "Gợi ý sản phẩm"),
     PURCHASE("purchase", "Muốn mua hàng"),
 
     SUPPORT("support", "Hỗ trợ chung"),
@@ -23,6 +24,7 @@ public enum IntentType {
     PRICE_CHECK("price_check", "Hỏi giá/khuyến mãi"),
     SIZE_ADVICE("size_advice", "Tư vấn size"),
     STOCK_CHECK("stock_check", "Kiểm tra tồn kho"),
+    TRACK_ORDER("track_order", "Theo dõi đơn hàng"),
     
     // Special
     GREETING("greeting", "Chào hỏi"),
